@@ -61,7 +61,7 @@ func ScanForNsAndDeployments(dirName string, generate bool) error {
 	}
 	var nsDirs []string
 	for _, file := range files {
-		if file.IsDir() && file.Name() != "istio-system" {
+		if file.IsDir() && file.Name() != "istio-system" && file.Name() != "istio-gateways" {
 			nsDirs = append(nsDirs, file.Name())
 		}
 	}
